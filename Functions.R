@@ -7,10 +7,7 @@ pollutantmean <- function(directory = "SpecData", pollutant, id ) {
                                           
               }
               
-              
-              dat_subset <- dat[dat["sulfate", "nitrate"] == pollutant,] ## This is where it goes wrong
-              ## dat_subset is turned all NA for some reason
-              mean(dat_subset, n.rma = T)             
+              mean(dat[, pollutant], na.rm = T)            
              
           
 }
